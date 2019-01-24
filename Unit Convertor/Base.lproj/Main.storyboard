@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Unit_Convertor" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hpx-Al-l6v">
+                                <rect key="frame" x="15" y="95" width="345" height="51"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="42"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Z2-vZ-Jbv">
+                                <rect key="frame" x="0.0" y="451" width="375" height="216"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="216" id="6rN-oH-40D"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="2dy-kc-rKJ" id="z0X-16-7Va"/>
+                                </connections>
+                            </pickerView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="DR8-tY-JeS">
+                                <rect key="frame" x="157" y="181" width="61" height="29"/>
+                                <segments>
+                                    <segment title="°F"/>
+                                    <segment title="°C"/>
+                                </segments>
+                                <connections>
+                                    <action selector="SegmentedUiControlAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="20R-Gq-SbQ"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="4Z2-vZ-Jbv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="3dQ-bX-eb1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Hpx-Al-l6v" secondAttribute="trailing" constant="15" id="8sg-Kh-vbH"/>
+                            <constraint firstAttribute="bottom" secondItem="4Z2-vZ-Jbv" secondAttribute="bottom" id="YEo-7u-QTb"/>
+                            <constraint firstItem="Hpx-Al-l6v" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="arn-ef-IdP"/>
+                            <constraint firstItem="Hpx-Al-l6v" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="75" id="c9P-Zv-ViN"/>
+                            <constraint firstItem="Hpx-Al-l6v" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="eJA-X6-pM5"/>
+                            <constraint firstItem="4Z2-vZ-Jbv" firstAttribute="centerX" secondItem="Hpx-Al-l6v" secondAttribute="centerX" id="nhZ-03-oRK"/>
+                            <constraint firstItem="DR8-tY-JeS" firstAttribute="centerX" secondItem="Hpx-Al-l6v" secondAttribute="centerX" id="w7u-xo-2IC"/>
+                            <constraint firstItem="DR8-tY-JeS" firstAttribute="top" secondItem="Hpx-Al-l6v" secondAttribute="bottom" constant="35" id="yvY-m2-9wG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="SegmentedUIControl" destination="DR8-tY-JeS" id="89x-kM-FmE"/>
+                        <outlet property="tempLabel" destination="Hpx-Al-l6v" id="P7b-kv-H4v"/>
+                        <outlet property="tempPicker" destination="4Z2-vZ-Jbv" id="2aU-mB-DIb"/>
+                        <outlet property="tempR" destination="2dy-kc-rKJ" id="U7I-CW-bdF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <customObject id="2dy-kc-rKJ" customClass="temperatureRange" customModule="Unit_Convertor" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="132.68365817091455"/>
+        </scene>
+    </scenes>
+</document>
